@@ -135,7 +135,8 @@
           echo "PLEASE CHECK EVERYTHING HAS WORKED"
           exit 0
         '';
-        formatter = pkgs.nixfmt-rfc-style;
+        formatter = pkgs.nixfmt;
+        pre-commit.settings.enabledPackages = [pkgs.treefmt];
         pre-commit.settings.hooks = {
           nixfmt.enable = true;
           nixfmt-rfc-style.enable = true;
@@ -145,15 +146,14 @@
           };
           treefmt = {
             enable = true;
-            package = self'.formatter;
+            package = pkgs.treefmt;
           };
         };
         treefmt = {
           projectRootFile = "flake.nix";
           programs = {
-            deadnix.enable = true;
-            statix.enable = true;
             nixfmt.enable = true;
+            typstyle.enable = true;
           };
 
           settings = {
@@ -162,8 +162,6 @@
             ];
 
             formatter = {
-              deadnix.priority = 1;
-              statix.priority = 2;
               nixfmt = {
                 priority = 3;
                 strict = true;
