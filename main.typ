@@ -53,7 +53,12 @@
   show-list-of-algorithms: true,
 )
 
-#show heading.where(level: 1): set heading(supplement: [Chapter])// ============================================================
+// ────────────────────────────────────────────────────────────
+//  BEGIN: MAIN BODY
+// ────────────────────────────────────────────────────────────
+
+#show heading.where(level: 1): set heading(supplement: [Chapter])
+// ============================================================
 //  CHAPTER 1 — Introduction
 // ============================================================
 #include "intro/intro.typ"
@@ -73,6 +78,10 @@
 // ============================================================
 #include "conclusions/conclusion.typ"
 
+// ────────────────────────────────────────────────────────────
+//  END: MAIN BODY
+// ────────────────────────────────────────────────────────────
+
 #pagebreak()
 // ============================================================
 //  APPENDICES
@@ -88,4 +97,8 @@
 #pagebreak()
 // full: true displays all references even if they are not used
 // Set to false or remove from function call if you don't want this.
+// main.bib is standard BibLaTeX
+// CSL stands for Citation Style Language: it is an XML file meant to detail how citations appear.
+// The style is based off American Physical Society (APS) but has been hacked
+// so the DOIs can be coloured links! All citations should have clickable DOIs according to UCL guidelines.
 #bibliography("main.bib", style: "ucl-bib.csl", full: true)

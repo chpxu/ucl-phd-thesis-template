@@ -9,11 +9,10 @@
 #import "@preview/ctheorems:1.1.3": *
 #show: thmrules
 
-// #set heading(numbering: "1.1.")
 #let theorem = thmbox(
   "theorem", // identifier
   "Theorem", // head
-  fill: rgb("#9a8606"),
+  fill: rgb("#aaf1fa"),
 )
 #let corollary = thmplain(
   "corollary",
@@ -39,7 +38,6 @@
 )
 #let example = thmplain("example", "Example").with(numbering: none)
 #let proof = thmproof("proof", "Proof")
-//#import "@preview/realhats:0.1.0": hat
 
 // ============================================================
 //  EXTRA PACKAGES AND THEIR CONFIGURATION
@@ -501,13 +499,8 @@
 // Will also handle references with @
 // ============================================================
 
-#let appendix(body, title: none) = {
+#let appendix(body) = {
   show heading.where(level: 1): set heading(numbering: "A", supplement: [Appendix])
-  if title != none {
-    heading(level: 1)[#title]
-  } else {
-    heading(level: 1)[]
-  }
   body
 }
 // ============================================================
