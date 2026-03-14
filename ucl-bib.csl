@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
+  <info>
+     <title>American Physical Society</title>
+    <title-short>APS</title-short>
+    <id>http://www.zotero.org/styles/american-physics-society</id>
+    <link href="http://www.zotero.org/styles/american-physics-society" rel="self"/>
+    <link href="http://www.zotero.org/styles/american-institute-of-physics" rel="template"/>
+    <link href="https://journals.aps.org/prl/authors#techformat" rel="documentation"/>
+     <category citation-format="numeric"/>
+  <category field="physics"/>
+  <updated>2026-03-13T21:36:00+00:00</updated>
+  </info>
+  <macro name="year-date">
+    <choose>
+      <if variable="issued">
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+      </if>
+      <else>
+        <text term="no date" form="short"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="day-date">
+    <choose>
+      <if variable="issued">
+        <date variable="issued">
+          <date-part name="day" suffix=" "/>
+          <date-part name="month" form="long" suffix=" "/>
+          <date-part name="year"/>
+        </date>
+      </if>
+      <else>
+        <text term="no date" form="short"/>
+      </else>
+    </choose>
+  </macro>
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout delimiter=", ">
+      <group prefix="[" suffix="]" delimiter=", ">
+        <text variable="citation-number"/>
+        <!-- <text macro="citation-locator"/> -->
+      </group>
+    </layout>
+  </citation>
+  <bibliography entry-spacing="0" second-field-align="flush">
+    <layout suffix=".">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <group delimiter=", &#10;">
+        <names variable="author">
+          <name initialize-with="."/>
+        </names>
+        <text variable="title" text-case="title" font-style="italic" />
+        <group delimiter=" " prefix="<<<" suffix=">>>">
+          <text variable="URL" suffix="|||"/>
+          <text variable="container-title-short"/>
+          <text variable="issue" />
+          <text variable="volume" prefix="(" suffix=")"/>
+          <text variable="page"/>
+          <text macro="year-date" prefix="(" suffix=")"/>
+        </group>
+      </group>
+    </layout>
+  </bibliography>
+</style>
