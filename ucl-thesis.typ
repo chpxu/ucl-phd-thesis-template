@@ -72,7 +72,6 @@
 #import "@preview/codly:1.3.0": * // https://typst.app/universe/package/codly
 #import "@preview/codly-languages:0.1.1": *
 
-
 // Uncomment if you need proof-trees
 // #import "@preview/curryst:0.6.0": rule, prooftree, rule-set
 // Finite automata
@@ -131,6 +130,7 @@
   show-list-of-tables: true,
   show-list-of-algorithms: true,
   show-list-of-notation: true,
+  bib-file: "main.bib",
   // ── The body of the thesis ─────────────────────────────────
   body,
 ) = {
@@ -257,6 +257,10 @@
     }
     // Only color the number, not the supplement.
     show regex("[\d.]+"): set text(fill: blue)
+    it
+  }
+  show link: it => {
+    set text(fill: blue)
     it
   }
   // ── Bibliography ───────────────────────────────────────────────
@@ -504,11 +508,6 @@
     body
   }
 }
-// ============================================================
-//  For Chapter headings
-// Chapter 1, 2 etc.
-// Will also handle references with @
-// ============================================================
 
 // ============================================================
 //  For Appendix headings
@@ -538,3 +537,16 @@
     include directory + "/" + file + ".typ"
   }
 ]
+
+// Helper function for bibliography across multiple Typst files
+// https://forum.typst.app/t/how-to-share-bibliography-in-a-multi-file-setup/1605/9
+#let load-bib(main: false, bib-file: "main.bib") = {
+  counter("bibs").step()
+
+  context if main {
+    [#bibliography(bib-file) <main-bib>]
+  } else if query(<main-bib>) == () and counter("bibs").get().first() == 1 {
+    // This is the first bibliography, and there is no main bibliography
+    bibliography(bib-file)
+  }
+}
