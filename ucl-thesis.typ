@@ -12,7 +12,7 @@
 #let theorem = thmbox(
   "theorem", // identifier
   "Theorem", // head
-  fill: rgb("#aaf1fa"),
+  fill: rgb("#c2f8c2"),
 )
 #let corollary = thmplain(
   "corollary",
@@ -34,7 +34,7 @@
 #let proposition = thmbox(
   "theorem", // identifier - same as that of theorem
   "Proposition", // head
-  fill: rgb("#dd99eb"),
+  fill: rgb("#f1acff"),
 )
 #let example = thmplain("example", "Example").with(numbering: none)
 #let proof = thmproof("proof", "Proof")
@@ -44,7 +44,7 @@
 // - They are separated by headers like these
 // - Imported packages that have default configuration all go in the final block
 // ============================================================
-#import "@preview/algorithmic:1.0.7"
+#import "@preview/algorithmic:1.0.7" // https://typst.app/universe/package/algorithmic
 #import algorithmic: algorithm, algorithm-figure, style-algorithm
 #show: style-algorithm.with(
   breakable: true,
@@ -55,14 +55,32 @@
 #let algo-vstroke = 0.5pt + luma(200)
 // ============================================================
 //  Unconfigured packages
-//
+//  Add any you want about here!
 // ============================================================
+#import "@preview/zero:0.6.1": format-table, num, zi // https://typst.app/universe/package/zero
 #import "@preview/physica:0.9.8": *
 #import "@preview/fancy-units:0.1.1": add-macros, fancy-units-configure, num, qty, unit
-#import "@preview/cetz:0.4.2"
+// Drawing with Typst, aka like TikZ for Typsr
+#import "@preview/cetz:0.4.2" // https://typst.app/universe/package/cetz
 #import "@preview/mannot:0.3.2": *
 #import "@preview/inknertia:0.1.0": *
+// Chemical/molecular diagrams
+#import "@preview/alchemist:0.1.8": * // https://typst.app/universe/package/alchemist
+// Quantum circuits
+#import "@preview/quill:0.7.2": * // https://typst.app/universe/package/quill
+// Better code highlighting
+#import "@preview/codly:1.3.0": * // https://typst.app/universe/package/codly
+#import "@preview/codly-languages:0.1.1": *
+
+
+// Uncomment if you need proof-trees
+// #import "@preview/curryst:0.6.0": rule, prooftree, rule-set
+// Finite automata
+// #import "@preview/finite:0.5.1": automaton
+// Total word counter for the thesis
 #import "@preview/wordometer:0.1.5": total-words, word-count
+// Drafting/margin notes for yourself
+#import "@preview/drafting:0.2.2"
 // ============================================================
 //  CUSTOM COMMANDS/FUNCTIONS
 // ============================================================
