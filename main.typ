@@ -17,11 +17,10 @@
   scope: "column",
 )
 #show: word-count.with(exclude: (heading.where(level: 1)))
-
+#show: codly-init.with()
 // ============================================================
 //  Initialise the template in ucl-thesis.typ
 // ============================================================
-
 #show: ucl-thesis.with(
   title: "THESIS TITLE",
   subtitle: "",
@@ -35,23 +34,31 @@
 
   // ── Front matter ───────────────────────────────────────────
   abstract: [
-    The signed declaration should be followed by an abstract consisting of no more than 300 words.
+    The signed declaration should be followed by an abstract consisting of no more than 300 words. The abstract can be edited inside `main.typ`. <abstract>
   ],
 
   impact-statement: [
-    The abstract should be followed by an impact statement consisting of no more than 500 words. For further information on the content of the Impact Statement, please see the Impact Statement Guidance Notes for Research Students and Supervisors. See #link("https://www.ucl.ac.uk/study/sites/study/files/impact-statement-guidance-notes.pdf")
+    The abstract should be followed by an impact statement consisting of no more than 500 words. For further information on the content of the Impact Statement, please see the Impact Statement Guidance Notes for Research Students and Supervisors. See #link("https://www.ucl.ac.uk/study/sites/study/files/impact-statement-guidance-notes.pdf"). The impact statement can be edited inside `main.typ`.
   ],
-
-  acknowledgements: [],
-
   dedication: [
+    The dedication can be edited inside `main.typ`.
   ],
+  acknowledgements: [
+    The acknowledgements can be edited inside `main.typ`.
+  ],
+
 
   line-spacing: 1.5,
   show-list-of-figures: true,
   show-list-of-tables: true,
   show-list-of-algorithms: true,
 )
+
+// ────────────────────────────────────────────────────────────
+//  DEMO FILE - REMOVE THIS LINE
+// ────────────────────────────────────────────────────────────
+
+#include "demo.typ"
 
 // ────────────────────────────────────────────────────────────
 //  BEGIN: MAIN BODY
@@ -81,7 +88,6 @@
 // ────────────────────────────────────────────────────────────
 //  END: MAIN BODY
 // ────────────────────────────────────────────────────────────
-
 #pagebreak()
 // ============================================================
 //  APPENDICES
@@ -101,4 +107,4 @@
 // CSL stands for Citation Style Language: it is an XML file meant to detail how citations appear.
 // The style is based off American Physical Society (APS) but has been hacked
 // so the DOIs can be coloured links! All citations should have clickable DOIs according to UCL guidelines.
-#bibliography("main.bib", style: "ucl-bib.csl", full: true)
+#load-bib(main: true)

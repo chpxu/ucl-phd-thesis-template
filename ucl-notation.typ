@@ -5,4 +5,4 @@
     table.header([*Notation*], [*Description*]),
     [$T$], [Temperature in Kelvin],
   ),
-)
+) <notation>

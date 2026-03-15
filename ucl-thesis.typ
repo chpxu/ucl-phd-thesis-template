@@ -72,14 +72,13 @@
 #import "@preview/codly:1.3.0": * // https://typst.app/universe/package/codly
 #import "@preview/codly-languages:0.1.1": *
 
-// Uncomment if you need proof-trees
-// #import "@preview/curryst:0.6.0": rule, prooftree, rule-set
+#import "@preview/curryst:0.6.0": prooftree, rule, rule-set
 // Finite automata
-// #import "@preview/finite:0.5.1": automaton
+#import "@preview/finite:0.5.1": automaton
 // Total word counter for the thesis
 #import "@preview/wordometer:0.1.5": total-words, word-count
 // Drafting/margin notes for yourself
-#import "@preview/drafting:0.2.2"
+#import "@preview/drafting:0.2.2": *
 // ============================================================
 //  CUSTOM COMMANDS/FUNCTIONS
 // ============================================================

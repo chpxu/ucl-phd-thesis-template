@@ -7,4 +7,4 @@
     [DFT], [Density Functional Theory],
     [KS], [Kohn-Sham],
   ),
-)
+) <acronyms>
