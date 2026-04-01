@@ -47,7 +47,6 @@
     The acknowledgements can be edited inside `main.typ`.
   ],
 
-
   line-spacing: 1.5,
   show-list-of-figures: true,
   show-list-of-tables: true,
