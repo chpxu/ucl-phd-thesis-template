@@ -103,4 +103,11 @@ If you scroll up to the list of figures, you'll see this has automatically been 
 ) <alg-gd>
 
 And you can of course refer to @alg-gd or @tab:units.
+
+
+Finally, here's the UCL logo as an example figure
+#figure(
+  image("title/logo.png", width: 80%),
+  caption: [The UCL logo from the title page at 80% width.],
+) <logo>
 #load-bib()

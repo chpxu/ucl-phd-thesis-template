@@ -4,7 +4,11 @@ let
 in
 {
   perSystem =
-    { pkgs, config, ... }:
+    {
+      pkgs,
+      config,
+      ...
+    }:
     let
       cfg = config.languages;
       cfgcode = config.editors.vscode;
@@ -19,12 +23,11 @@ in
       extensionsToJSON = builtins.toJSON (lib.mergeAttrsList genExtensions);
       #  = ;
       settingsScript = pkgs.writeShellScriptBin "settings.sh" ''
-        #!/bin/bash 
+        #!/bin/bash
         echo "Writing VSCode settings and extensions to the project root directory/.vscode"
         if [ ! -e ".vscode" ]; then
           mkdir -p "./.vscode"
         fi
-
         cat << EOF > .vscode/settings.json
         ${if cfgcode.enableSettings then (builtins.toString settingsToJSON) else "{}"}
         EOF

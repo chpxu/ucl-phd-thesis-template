@@ -11,7 +11,6 @@
   };
   outputs =
     {
-      nixpkgs2505,
       flake-parts,
       ...
     }@inputs:
@@ -42,21 +41,13 @@
         perSystem =
           {
             config,
-            inputs',
             pkgs,
-            system,
             ...
           }:
           let
             userConfig = import ./config.nix { inherit pkgs; };
           in
           {
-            _module.args = {
-              pkgsOlder = import nixpkgs2505 {
-                inherit system inputs';
-              };
-              helper = import ./nix/helpers;
-            };
             imports = [ userConfig ]; # settings from config.nix defined by user
             pre-commit.settings.enabledPackages = [ pkgs.treefmt ];
             pre-commit.settings.hooks = {

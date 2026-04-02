@@ -8,7 +8,7 @@
 // ============================================================
 #import "@preview/ctheorems:1.1.3": *
 #show: thmrules
-
+#set math.equation(numbering: "(1.1)")
 #let theorem = thmbox(
   "theorem", // identifier
   "Theorem", // head
@@ -92,7 +92,7 @@
 #let eqref(id) = [Eq.~(#ref(label(id), supplement: none))]
 #let refshort(id) = [Ref.~#cite(label(id))]
 #let figref(id) = [Fig.~(#ref(label(id), supplement: none))]
-
+#let pm = [$±$]
 
 #let ucl-thesis(
   // ── Required metadata ──────────────────────────────────────
@@ -133,7 +133,6 @@
   // ── The body of the thesis ─────────────────────────────────
   body,
 ) = {
-  set math.equation(numbering: "(1.1)")
   // ── Page geometry ──────────────────────────────────────────
   set page(
     paper: "a4",
@@ -516,6 +515,15 @@
 
 #let appendix(body) = {
   show heading.where(level: 1): set heading(numbering: "A", supplement: [Appendix])
+  show ref: it => {
+    if it.element == none {
+      // This is a citation, which is handled above.
+      return it
+    }
+    // Only color the number, not the supplement.
+    show regex("(\d+|\b[A-Z]\b)"): set text(fill: blue)
+    it
+  }
   body
 }
 // ============================================================
