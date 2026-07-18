@@ -1,5 +1,5 @@
 {
-  description = "Opinionated Flake for Fortran/Python/C/C++/JS Development";
+  description = "Flake for Typst UCL PhD thesis template";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs2505.url = "github:NixOS/nixpkgs/2b0d2b456e4e8452cf1c16d00118d145f31160f9"; # to use for older packages
@@ -84,6 +84,30 @@
                   };
                 };
               };
+            };
+            packages.default = pkgs.buildTypstPackage {
+              pname = "ucl-phd-thesis";
+              version = "0.1.0";
+              src = ./.;
+              buildInputs = with pkgs.typstPackages; [
+                zero
+                physica
+                fancy-units
+                cetz
+                cetz-plot
+                mannot
+                inknertia
+                alchemist
+                chemformula
+                quill
+                codly
+                codly-languages
+                curryst
+                finite
+                wordometer
+                drafting
+              ];
+              enableParallelBuilding = true;
             };
           };
         flake = {

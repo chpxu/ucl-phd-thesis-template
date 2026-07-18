@@ -60,27 +60,28 @@
 #import "@preview/zero:0.6.1": format-table, num, zi // https://typst.app/universe/package/zero
 #import "@preview/physica:0.9.8": *
 #import "@preview/fancy-units:0.1.1": add-macros, fancy-units-configure, num, qty, unit
-// Drawing with Typst, aka like TikZ for Typsr
-#import "@preview/cetz:0.4.2" // https://typst.app/universe/package/cetz
-#import "@preview/mannot:0.3.2": *
-#import "@preview/inknertia:0.1.0": *
+// Drawing with Typst, aka like TikZ for Typst
+#import "@preview/cetz:0.5.2" // https://typst.app/universe/package/cetz
+#import "@preview/cetz-plot:0.1.4" // https://github.com/cetz-package/cetz-plot
+#import "@preview/mannot:0.3.3": * // https://github.com/ryuryu-ymj/mannot
+#import "@preview/inknertia:0.1.0": * // https://github.com/ploliver/inknertia
 // Chemical/molecular diagrams
-#import "@preview/alchemist:0.1.8": * // https://typst.app/universe/package/alchemist
+#import "@preview/alchemist:0.1.9": * // https://typst.app/universe/package/alchemist
+// For chemical formulas like CH4
+#import "@preview/chemformula:0.1.3": ch // https://github.com/pacaunt/chemformula
 // Quantum circuits
-#import "@preview/quill:0.7.2": * // https://typst.app/universe/package/quill
+#import "@preview/quill:0.7.3": * // https://typst.app/universe/package/quill
 // Better code highlighting
 #import "@preview/codly:1.3.0": * // https://typst.app/universe/package/codly
-#import "@preview/codly-languages:0.1.1": *
+#import "@preview/codly-languages:0.1.10": * // https://github.com/swaits-typst-packages/codly-languages
 
-#import "@preview/curryst:0.6.0": prooftree, rule, rule-set
+#import "@preview/curryst:0.6.0": prooftree, rule, rule-set // https://github.com/pauladam94/curryst
 // Finite automata
-#import "@preview/finite:0.5.1": automaton
+#import "@preview/finite:0.5.1": automaton // https://github.com/jneug/typst-finite
 // Total word counter for the thesis
-#import "@preview/wordometer:0.1.5": total-words, word-count
+#import "@preview/wordometer:0.1.5": total-words, word-count // https://github.com/Jollywatt/typst-wordometer
 // Drafting/margin notes for yourself
-#import "@preview/drafting:0.2.2": *
-// For chemical formulas like CH4
-#import "@preview/chemformula:0.1.3": ch
+#import "@preview/drafting:0.2.2": * // https://github.com/ntjess/typst-drafting
 // ============================================================
 //  CUSTOM COMMANDS/FUNCTIONS
 // ============================================================
