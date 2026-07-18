@@ -79,6 +79,8 @@
 #import "@preview/wordometer:0.1.5": total-words, word-count
 // Drafting/margin notes for yourself
 #import "@preview/drafting:0.2.2": *
+// For chemical formulas like CH4
+#import "@preview/chemformula:0.1.3": ch
 // ============================================================
 //  CUSTOM COMMANDS/FUNCTIONS
 // ============================================================
@@ -118,12 +120,12 @@
   font-body: "New Computer Modern",
   font-heading: "New Computer Modern",
   //  Note to the user
-  // The UCL guidelines suggest that ("should") the lines should be 1.5x or 2x spaced. Uncomment (remove the corresponding "%" before the line) to use (line 48 for 1.5x spacing, 49 for 2x spacing).
-  // The UCL guidelines enforce that ("must be") margins at the binding edge must be not be less than 40 mm (1.5 inches) and other margins not less than 20 mm (.75 inches). In this document, both left and right margins are set to 40mm, and top and bottom to 20mm. If the user wants just the binding edge to be 40mm, and the other to be 20mm (or more), they should change the "right" parameter of the geometry package options (line 4).
-  //% The UCL guidelines suggest that ("recommend") the minimum font size is 12. This can be changed in the \documentclass [options] selection (line 3). In this document, the default to 12pt.
-  //% The UCL guidelines suggest that ("recommend") the font is either Arial or Helvettica. I have included ways of using those fonts in the document above, uncomment to use. (line 45 for Helvettica, 46 for Arial).
-  binding-margin: 40mm,
-  outer-margin: 40mm,
+  // The UCL guidelines suggest that ("should") the lines should be 1.5x or 2x spaced.
+  // The UCL guidelines enforce that ("must be") margins at the binding edge must be not be less than 40 mm (1.5 inches) and other margins not less than 20 mm (.75 inches). In this document, both left and right margins are set to 20mm, and top and bottom to 20mm. If the user wants just the binding edge to be 40mm, and the other to be 20mm (or more), they should change the "right" parameter of the geometry package options (line 4).
+  // The UCL guidelines suggest that ("recommend") the minimum font size is 12. This can be changed in the "font-size" key a few lines above. In this document, the default is 12pt.
+  // The UCL guidelines suggest that ("recommend") the font is either Arial or Helvettica. I personally feel like New Computer Modern is best but if you want others, install them onto your system and change the font-bod/heading
+  binding-margin: 20mm,
+  outer-margin: 20mm,
   // ── Feature flags ──────────────────────────────────────────
   show-list-of-figures: true,
   show-list-of-tables: true,
