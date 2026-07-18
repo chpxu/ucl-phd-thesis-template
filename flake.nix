@@ -2,7 +2,6 @@
   description = "Flake for Typst UCL PhD thesis template";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs2505.url = "github:NixOS/nixpkgs/2b0d2b456e4e8452cf1c16d00118d145f31160f9"; # to use for older packages
     flake-parts.url = "github:hercules-ci/flake-parts/a34fae9c08a15ad73f295041fec82323541400a9";
     devshell.url = "github:numtide/devshell/17ed8d9744ebe70424659b0ef74ad6d41fc87071";
     import-tree.url = "github:vic/import-tree/3c23749d8013ec6daa1d7255057590e9ca726646";

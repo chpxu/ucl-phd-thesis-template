@@ -69,12 +69,12 @@
 #import "@preview/alchemist:0.1.9": * // https://typst.app/universe/package/alchemist
 // For chemical formulas like CH4
 #import "@preview/chemformula:0.1.3": ch // https://github.com/pacaunt/chemformula
+#import "@preview/materia:0.1.0": crystal, prototypes // https://typst.app/universe/package/materia
 // Quantum circuits
 #import "@preview/quill:0.7.3": * // https://typst.app/universe/package/quill
 // Better code highlighting
 #import "@preview/codly:1.3.0": * // https://typst.app/universe/package/codly
 #import "@preview/codly-languages:0.1.10": * // https://github.com/swaits-typst-packages/codly-languages
-
 #import "@preview/curryst:0.6.0": prooftree, rule, rule-set // https://github.com/pauladam94/curryst
 // Finite automata
 #import "@preview/finite:0.5.1": automaton // https://github.com/jneug/typst-finite
