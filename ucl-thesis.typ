@@ -57,9 +57,10 @@
 //  Unconfigured packages
 //  Add any you want about here!
 // ============================================================
+#import "@preview/fletcher:0.5.8" as fletcher: diagram, edge, node, shapes
 #import "@preview/zero:0.6.1": format-table, num, zi // https://typst.app/universe/package/zero
 #import "@preview/physica:0.9.8": *
-#import "@preview/fancy-units:0.1.1": add-macros, fancy-units-configure, num, qty, unit
+#import "@preview/unify:0.8.1": add-unit, num as uninum, numrange, qty, qtyrange
 // Drawing with Typst, aka like TikZ for Typst
 #import "@preview/cetz:0.5.2" // https://typst.app/universe/package/cetz
 #import "@preview/cetz-plot:0.1.4" // https://github.com/cetz-package/cetz-plot
@@ -69,7 +70,7 @@
 #import "@preview/alchemist:0.1.9": * // https://typst.app/universe/package/alchemist
 // For chemical formulas like CH4
 #import "@preview/chemformula:0.1.3": ch // https://github.com/pacaunt/chemformula
-#import "@preview/materia:0.1.0": crystal, prototypes // https://typst.app/universe/package/materia
+#import "@preview/materia:0.1.0": crystal, import-cif, prototypes // https://typst.app/universe/package/materia
 // Quantum circuits
 #import "@preview/quill:0.7.3": * // https://typst.app/universe/package/quill
 // Better code highlighting
@@ -82,6 +83,7 @@
 #import "@preview/wordometer:0.1.5": total-words, word-count // https://github.com/Jollywatt/typst-wordometer
 // Drafting/margin notes for yourself
 #import "@preview/drafting:0.2.2": * // https://github.com/ntjess/typst-drafting
+#import "@preview/pergamon:0.8.0": * // https://typst.app/universe/package/pergamon/
 // ============================================================
 //  CUSTOM COMMANDS/FUNCTIONS
 // ============================================================
@@ -158,8 +160,8 @@
   )
 
   set par(
-    leading: line-spacing * 0.65em,
-    spacing: 1.2em,
+    leading: 0.65em,
+    spacing: line-spacing * 1em,
     justify: true,
     first-line-indent: 1.0em,
   )
@@ -246,10 +248,10 @@
   }
   // ── Citations, Links and References ───────────────────────────────────────────────
   // Source: https://github.com/typst/typst/discussions/4143
-  show cite: it => {
-    show regex("\d+"): set text(fill: blue)
-    it
-  }
+  // show cite: it => {
+  //   show regex("\d+"): set text(fill: blue)
+  //   it
+  // }
 
   show ref: it => {
     if it.element == none {
@@ -292,7 +294,7 @@
   page(margin: (left: binding-margin, right: outer-margin, top: 30mm, bottom: 25mm), {
     set align(center)
 
-    image("title/logo.png")
+    image("title/newlogo3.png")
     // Title
     line(
       length: 100%,

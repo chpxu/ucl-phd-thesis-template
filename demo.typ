@@ -72,7 +72,7 @@ If you scroll up to the list of figures, you'll see this has automatically been 
     inset: 8pt,
     align: horizon,
     table.header([*Quantity*], [*Atomic unit*], [*SI unit*], [*Conversion*]),
-    [Energy], [Hartree, Ha], [Electronvolt, eV], [$1#unit[Ha] = 27.2114079527 #unit[eV]$],
+    [Energy], [Hartree, Ha], [Electronvolt, eV], [$1 "Ha" = 27.2114079527 "eV"$],
     [Distance], [Bohr, $a_0$], [#sym.angstrom], [$1 a_0 = 0.529177249 #sym.angstrom$],
   ),
   caption: [Unit conversion for common quantities in atomic physics.],
