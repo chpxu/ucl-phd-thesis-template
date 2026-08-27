@@ -54,56 +54,64 @@
 )
 
 // ────────────────────────────────────────────────────────────
-//  DEMO FILE - REMOVE THIS LINE
+//  INITIALISE BIBLIOGRAPHY WITH PERGAMON
+//    #add-bib-resource is needed before the files you intend to
+//     use bibliographies more
+//    You then need to use #refsection to wrap the files that
+//      share a bibliography
+//    I have basically wrapped the entire thesis in one refsection
 // ────────────────────────────────────────────────────────────
+#add-bib-resource(read("main.bib"))
+#refsection(style: numeric-style())[
 
-#include "demo.typ"
+  // ────────────────────────────────────────────────────────────
+  //  DEMO FILE - REMOVE THIS SECTION
+  // ────────────────────────────────────────────────────────────
 
-// ────────────────────────────────────────────────────────────
-//  BEGIN: MAIN BODY
-// ────────────────────────────────────────────────────────────
+  #include "demo.typ"
 
-#show heading.where(level: 1): set heading(supplement: [Chapter])
-// ============================================================
-//  CHAPTER 1 — Introduction
-// ============================================================
-#include "intro/intro.typ"
+  // ────────────────────────────────────────────────────────────
+  //  BEGIN: MAIN BODY
+  // ────────────────────────────────────────────────────────────
 
-// ============================================================
-//  CHAPTER 2 — theory
-// ============================================================
-#include "chapter2/theory.typ"
+  #show heading.where(level: 1): set heading(supplement: [Chapter])
+  // ============================================================
+  //  CHAPTER 1 — Introduction
+  // ============================================================
+  #include "intro/intro.typ"
 
-// ============================================================
-//  CHAPTER 3 — Experiment
-// ============================================================
-#include "chapter3/experiment.typ"
+  // ============================================================
+  //  CHAPTER 2 — theory
+  // ============================================================
+  #include "chapter2/theory.typ"
 
-// ============================================================
-//  CHAPTER 4 — Conclusions
-// ============================================================
-#include "conclusions/conclusion.typ"
+  // ============================================================
+  //  CHAPTER 3 — Experiment
+  // ============================================================
+  #include "chapter3/experiment.typ"
 
-// ────────────────────────────────────────────────────────────
-//  END: MAIN BODY
-// ────────────────────────────────────────────────────────────
-#pagebreak()
-// ============================================================
-//  APPENDICES
-//  In ucl-thesis.typ, I defined a function which auto-imports
-// all .typ files in a directory
-// ============================================================
-#counter(heading).update(0)
-#include-files("appendix", ("A", "B"))
+  // ============================================================
+  //  CHAPTER 4 — Conclusions
+  // ============================================================
+  #include "conclusions/conclusion.typ"
 
-// ============================================================
-//  BIBLIOGRAPHY
-// ============================================================
-#pagebreak()
-// full: true displays all references even if they are not used
-// Set to false or remove from function call if you don't want this.
-// main.bib is standard BibLaTeX
-// CSL stands for Citation Style Language: it is an XML file meant to detail how citations appear.
-// The style is based off American Physical Society (APS) but has been hacked
-// so the DOIs can be coloured links! All citations should have clickable DOIs according to UCL guidelines.
-#load-bib(main: true)
+  // ────────────────────────────────────────────────────────────
+  //  END: MAIN BODY
+  // ────────────────────────────────────────────────────────────
+  #pagebreak()
+  // ============================================================
+  //  APPENDICES
+  //  In ucl-thesis.typ, I defined a function which auto-imports
+  // all .typ files in a directory
+  // ============================================================
+  #counter(heading).update(0)
+  #include-files("appendix", ("A", "B"))
+
+  // ============================================================
+  //  BIBLIOGRAPHY
+  // ============================================================
+  #pagebreak()
+
+  // this uses pergamon which highlights URLs and can be used for multi-ref management
+  #print-bibliography()
+] // End refsection
