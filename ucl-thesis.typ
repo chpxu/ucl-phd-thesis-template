@@ -127,8 +127,8 @@
   // The UCL guidelines enforce that ("must be") margins at the binding edge must be not be less than 40 mm (1.5 inches) and other margins not less than 20 mm (.75 inches). In this document, both left and right margins are set to 20mm, and top and bottom to 20mm. If the user wants just the binding edge to be 40mm, and the other to be 20mm (or more), they should change the "right" parameter of the geometry package options (line 4).
   // The UCL guidelines suggest that ("recommend") the minimum font size is 12. This can be changed in the "font-size" key a few lines above. In this document, the default is 12pt.
   // The UCL guidelines suggest that ("recommend") the font is either Arial or Helvettica. I personally feel like New Computer Modern is best but if you want others, install them onto your system and change the font-bod/heading
-  binding-margin: 20mm,
-  outer-margin: 20mm,
+  binding-margin: 40mm,
+  outer-margin: 40mm,
   // ── Feature flags ──────────────────────────────────────────
   show-list-of-figures: true,
   show-list-of-tables: true,
@@ -247,12 +247,6 @@
     pad(left: 2em, right: 1em, text(style: "italic", it.body))
   }
   // ── Citations, Links and References ───────────────────────────────────────────────
-  // Source: https://github.com/typst/typst/discussions/4143
-  // show cite: it => {
-  //   show regex("\d+"): set text(fill: blue)
-  //   it
-  // }
-
   show ref: it => {
     if it.element == none {
       // This is a citation, which is handled above.

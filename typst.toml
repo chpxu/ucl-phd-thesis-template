@@ -1,0 +1,17 @@
+[package]
+name = "phd-thesis-ucl"
+version = "0.1.0"
+entrypoint = "ucl-thesis.typ"
+authors = ["chpxu <@chpxu>"]
+license = "MIT"
+description = "PhD thesis for University College London geared towards STEM candidates."
+repository = "https://github.com/chpxu/ucl-phd-thesis-template"
+keywords = ["physics", "computing", "science", "computer science", "mathematics", "materials", "chemistry", "quantum"]
+disciplines = ["physics", "chemistry", "computer-science", "mathematics"]
+compiler = "0.15.0"
+exclude = ["nix/", "*.nix", ".envrc", "*.lock"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
