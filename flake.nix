@@ -91,7 +91,7 @@
               buildInputs = with pkgs.typstPackages; [
                 zero
                 physica
-                fancy-units
+                unify
                 cetz
                 cetz-plot
                 mannot
@@ -105,6 +105,7 @@
                 finite
                 wordometer
                 drafting
+                pergamon
               ];
               enableParallelBuilding = true;
             };
